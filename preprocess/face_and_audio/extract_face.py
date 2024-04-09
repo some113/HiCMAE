@@ -25,7 +25,7 @@ import shutil
 -simalign output similarity aligned images of the tracked faces
 -nobadaligned if outputting similarity aligned images, do not output from frames where detection failed or is unreliable (thus saving some disk space)    
 """
-OPENFACE_EXE = os.path.join('/kaggle/working/OpenFace/build/bin/FeatureExtraction', '')
+OPENFACE_EXE = '/kaggle/working/OpenFace/build/bin/FeatureExtraction'
 
 def process_one_video(video_file, in_dir, out_dir, openface_exe=OPENFACE_EXE, img_size=112):
     # file_name = os.path.basename(os.path.splitext(video_file)[0])
