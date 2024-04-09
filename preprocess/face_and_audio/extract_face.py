@@ -30,7 +30,7 @@ OPENFACE_EXE = '/kaggle/working/OpenFace/build/bin/FeatureExtraction'
 def process_one_video(video_file, in_dir, out_dir, openface_exe=OPENFACE_EXE, img_size=112):
     # file_name = os.path.basename(os.path.splitext(video_file)[0])
     # Note: + '\\' is needed
-    file_name = os.path.splitext(video_file.replace(in_dir + '\\', ''))[0] # out dir has the same structure with in dir
+    file_name = os.path.splitext(video_file.replace(in_dir + '/', ''))[0] # out dir has the same structure with in dir
     print('file_name: ', file_name)
 
     out_dir = os.path.join('/kaggle/working/crema', file_name)
