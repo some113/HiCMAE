@@ -34,6 +34,7 @@ def process_one_video(video_file, in_dir, out_dir, openface_exe=OPENFACE_EXE, im
     print('file_name: ', file_name)
 
     out_dir = os.path.join(out_dir, file_name)
+    print('out dir:', out_dir)
     if os.path.exists(out_dir):
         print(f'Note: "{out_dir}" already exist!')
         return video_file
