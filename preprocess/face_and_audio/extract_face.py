@@ -41,7 +41,7 @@ def process_one_video(video_file, in_dir, out_dir, openface_exe=OPENFACE_EXE, im
     else:
         os.makedirs(out_dir)
 
-    cmd = f'"{openface_exe}" -f "{video_file}" -out_dir "{out_dir}" -simalign -simsize {img_size} -format_aligned jpg -nomask'
+    cmd = f"{openface_exe}" -f "{video_file}" -out_dir "{out_dir}" -simalign -simsize {img_size} -format_aligned jpg -nomask'
     print(cmd)
     subprocess.call(cmd, shell=False)
     return video_file
