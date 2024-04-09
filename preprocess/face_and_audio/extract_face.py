@@ -33,7 +33,7 @@ def process_one_video(video_file, in_dir, out_dir, openface_exe=OPENFACE_EXE, im
     file_name = os.path.splitext(video_file.replace(in_dir + '\\', ''))[0] # out dir has the same structure with in dir
     print('file_name: ', file_name)
 
-    out_dir = os.path.join(out_dir, file_name)
+    out_dir = os.path.join('/kaggle/working/crema', file_name)
     print('out dir:', out_dir)
     if os.path.exists(out_dir):
         print(f'Note: "{out_dir}" already exist!')
