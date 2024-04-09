@@ -88,7 +88,7 @@ def copy_one_video(src_dir, tgt_dir):
 
 if __name__ == '__main__':
     # CAMER-D dataset (downloaded from: https://github.com/CheyneyComputerScience/CREMA-D)
-    dataset_root = '/kaggle/input/crema-d-video'
+    dataset_root = '/kaggle/input/videoflash'
     video_dir = dataset_root # note: .avi
     img_size = 160
     file_ext = 'flv'
