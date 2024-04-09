@@ -88,11 +88,11 @@ def copy_one_video(src_dir, tgt_dir):
 if __name__ == '__main__':
     # CAMER-D dataset (downloaded from: https://github.com/CheyneyComputerScience/CREMA-D)
     dataset_root = '/kaggle/input/crema-d-video'
-    video_dir = os.path.join(dataset_root, 'VideoFlash') # note: .avi
+    video_dir = dataset_root # note: .avi
     img_size = 160
     file_ext = 'flv'
     video_template_path = f'*.{file_ext}'
-    out_dir = '/kaggle/working/'
+    out_dir = '/kaggle/working/crema'
     # STEP 1: extract faces from videos using OpenFace
     main(video_dir, out_dir, video_template_path=video_template_path, multi_process=True, img_size=img_size)
 
