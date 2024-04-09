@@ -25,7 +25,7 @@ import shutil
 -simalign output similarity aligned images of the tracked faces
 -nobadaligned if outputting similarity aligned images, do not output from frames where detection failed or is unreliable (thus saving some disk space)    
 """
-OPENFACE_EXE = os.path.join(os.path.dirname(__file__), '../../../OpenFace_2.2.0_win_x64/FeatureExtraction.exe')
+OPENFACE_EXE = '/kaggle/working/OpenFace/build/bin/FeatureExtraction'
 
 def process_one_video(video_file, in_dir, out_dir, openface_exe=OPENFACE_EXE, img_size=112):
     # file_name = os.path.basename(os.path.splitext(video_file)[0])
@@ -87,12 +87,12 @@ def copy_one_video(src_dir, tgt_dir):
 
 if __name__ == '__main__':
     # CAMER-D dataset (downloaded from: https://github.com/CheyneyComputerScience/CREMA-D)
-    dataset_root = os.path.join(os.path.dirname(os.path.realpath(__file__)), '../../../CREMA-D')
+    dataset_root = '/kaggle/input/crema-d-video'
     video_dir = os.path.join(dataset_root, 'VideoFlash') # note: .avi
     img_size = 160
     file_ext = 'flv'
     video_template_path = f'*.{file_ext}'
-    out_dir = os.path.join(video_dir, '../openface')
+    out_dir = '/kaggle/working/'
     # STEP 1: extract faces from videos using OpenFace
     main(video_dir, out_dir, video_template_path=video_template_path, multi_process=True, img_size=img_size)
 
