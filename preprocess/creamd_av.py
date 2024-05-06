@@ -7,7 +7,7 @@ import torchaudio
 import numpy as np
 
 dataset = "CREMA-D"
-data_path = '/kaggle/input/'
+data_path = '/kaggle/input/crema-d-1'
 video_dir = os.path.join(data_path, 'face_aligned')
 audio_dir = os.path.join(data_path, 'AudioWAV') # already 16k
 audio_sample_rate = 16000 # expected
