@@ -42,7 +42,7 @@ broken_samples = ['1076_MTI_NEU_XX', '1076_MTI_SAD_XX', '1064_TIE_SAD_XX', '1064
 
 for split in splits:
     print(f'Processing split {split} ...')
-    save_dir = '/kaggle/working'
+    save_dir =  f'../saved/data/{dataset.lower()}/audio_visual/split0{split}'
     if not os.path.exists(save_dir):
         os.makedirs(save_dir)
 
