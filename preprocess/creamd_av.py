@@ -7,7 +7,7 @@ import torchaudio
 import numpy as np
 
 dataset = "CREMA-D"
-data_path = os.path.join(os.path.dirname(__file__), f'../../{dataset}')
+data_path = '/kaggle/input/'
 video_dir = os.path.join(data_path, 'face_aligned')
 audio_dir = os.path.join(data_path, 'AudioWAV') # already 16k
 audio_sample_rate = 16000 # expected
@@ -42,7 +42,7 @@ broken_samples = ['1076_MTI_NEU_XX', '1076_MTI_SAD_XX', '1064_TIE_SAD_XX', '1064
 
 for split in splits:
     print(f'Processing split {split} ...')
-    save_dir = f'../saved/data/{dataset.lower()}/audio_visual/split0{split}'
+    save_dir = '/kaggle/working'
     if not os.path.exists(save_dir):
         os.makedirs(save_dir)
 
