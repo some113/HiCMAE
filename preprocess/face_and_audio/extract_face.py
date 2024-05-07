@@ -25,22 +25,23 @@ import shutil
 -simalign output similarity aligned images of the tracked faces
 -nobadaligned if outputting similarity aligned images, do not output from frames where detection failed or is unreliable (thus saving some disk space)    
 """
-OPENFACE_EXE = os.path.join(os.path.dirname(__file__), '../../../OpenFace_2.2.0_win_x64/FeatureExtraction.exe')
+OPENFACE_EXE = '/kaggle/working/OpenFace/build/bin/FeatureExtraction'
 
 def process_one_video(video_file, in_dir, out_dir, openface_exe=OPENFACE_EXE, img_size=112):
     # file_name = os.path.basename(os.path.splitext(video_file)[0])
     # Note: + '\\' is needed
-    file_name = os.path.splitext(video_file.replace(in_dir + '\\', ''))[0] # out dir has the same structure with in dir
-    print('file_name: ', file_name)
+    file_name = os.path.splitext(video_file.replace(in_dir + '/', ''))[0] # out dir has the same structure with in dir
+    #print('file_name: ', file_name)
 
-    out_dir = os.path.join(out_dir, file_name)
+    out_dir = os.path.join('/kaggle/working/crema', file_name)
+    #print('out dir:', out_dir)
     if os.path.exists(out_dir):
         print(f'Note: "{out_dir}" already exist!')
         return video_file
     else:
         os.makedirs(out_dir)
 
-    cmd = f'"{openface_exe}" -f "{video_file}" -out_dir "{out_dir}" -simalign -simsize {img_size} -format_aligned jpg -nomask'
+    cmd = f'{openface_exe} -f {video_file} -out_dir {out_dir} -simalign -simsize {img_size} -format_aligned jpg -nomask'
     print(cmd)
     subprocess.call(cmd, shell=False)
     return video_file
@@ -87,12 +88,12 @@ def copy_one_video(src_dir, tgt_dir):
 
 if __name__ == '__main__':
     # CAMER-D dataset (downloaded from: https://github.com/CheyneyComputerScience/CREMA-D)
-    dataset_root = os.path.join(os.path.dirname(os.path.realpath(__file__)), '../../../CREMA-D')
-    video_dir = os.path.join(dataset_root, 'VideoFlash') # note: .avi
+    dataset_root = '/kaggle/input/d/tunnguyn315/videoflash'
+    video_dir = dataset_root # note: .avi
     img_size = 160
     file_ext = 'flv'
     video_template_path = f'*.{file_ext}'
-    out_dir = os.path.join(video_dir, '../openface')
+    out_dir = '/kaggle/working/crema'
     # STEP 1: extract faces from videos using OpenFace
     main(video_dir, out_dir, video_template_path=video_template_path, multi_process=True, img_size=img_size)
 
