@@ -18,7 +18,7 @@ num_splits = 1
 splits = range(1, num_splits + 1)
 
 # read
-total_samples = 82
+total_samples = 7442
 num_subjects_per_split = 18 # 91 / 5
 sample_dirs = sorted(glob.glob(os.path.join(video_dir, '*')))
 sample_dirs
