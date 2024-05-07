@@ -14,7 +14,7 @@ audio_sample_rate = 16000 # expected
 audio_file_ext = 'wav'
 print(f'video dir {video_dir} audio dir {audio_dir}')
 
-num_splits = 1
+num_splits = 5
 splits = range(1, num_splits + 1)
 
 # read
