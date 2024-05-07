@@ -19,7 +19,7 @@ splits = range(1, num_splits + 1)
 
 # read
 total_samples = 7442
-num_subjects_per_split = 18 # 91 / 5
+num_subjects_per_split =  # 91 / 5
 sample_dirs = sorted(glob.glob(os.path.join(video_dir, '*')))
 sample_dirs
 assert len(sample_dirs) == total_samples, f'Error: wrong number of videos, expected {total_samples}, got {len(sample_dirs)}.'
