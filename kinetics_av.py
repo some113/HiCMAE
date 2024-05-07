@@ -326,6 +326,7 @@ class VideoClsDatasetFrame(Dataset):
         import pandas as pd
         cleaned = pd.read_csv(self.anno_path, header=None, delimiter=' ')
         self.dataset_samples = list(cleaned.values[:, 0])
+        print("DEBUG: cleaned var value:", cleaned)
         # for audio
         self.dataset_samples_audio = list(cleaned.values[:, 1])
         # support multi-outputs
