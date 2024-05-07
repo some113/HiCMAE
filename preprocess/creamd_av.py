@@ -54,7 +54,7 @@ for split in splits:
             continue
         print(sample_dir)
         print(sample_dir.split('/')[-1].split('_'))
-        sub_id, sentence, label, intensity = sample_dir.split('\\')[-1].split('_')
+        sub_id, sentence, label, intensity = sample_dir.split('/')[-1].split('_')
         sub_idx = int(sub_id) - 1001
         label_idx = label2idx[label]
         offset = 0
