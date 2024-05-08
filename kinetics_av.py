@@ -545,7 +545,8 @@ class VideoClsDatasetFrame(Dataset):
             return []
 
         # avoid hanging issue
-        if os.path.getsize(fname) < 1 * 1024:
+        #if os.path.getsize(fname) < 1 * 1024:
+        if len(os.listdir(fname)) == 0
             print('SKIP: ', fname, " - ", os.path.getsize(fname))
             return []
         try:
