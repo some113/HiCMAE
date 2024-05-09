@@ -12,6 +12,7 @@ import pickle
 
 
 def train_class_batch(model, samples, samples_audio, target, criterion):
+    print("DEBUG: train class batch samples_audio:", samples_audio)
     outputs = model(samples, samples_audio)
     loss = criterion(outputs, target)
     return loss, outputs
