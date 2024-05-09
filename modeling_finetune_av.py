@@ -553,6 +553,7 @@ class VisionTransformerEncoder2D(nn.Module):
         x = self.patch_embed(x)
         B, _, _ = x.size()
 
+        print(f"DEBUG: audio sample x:, {x}, len {len(x)}, B: {B}")
         # x = x + self.pos_embed.type_as(x).to(x.device).clone().detach()
         if self.pos_embed is not None:
             x = x + self.pos_embed.expand(B, -1, -1).type_as(x).to(x.device).clone().detach()
