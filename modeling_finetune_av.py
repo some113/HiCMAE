@@ -929,3 +929,21 @@ def avit_dim512_patch16_160_a256(pretrained=False, **kwargs):
         norm_layer=partial(nn.LayerNorm, eps=1e-6), **kwargs)
     model.default_cfg = _cfg()
     return model
+    
+@register_model
+def test(pretrained=False, **kwargs):
+    embed_dim = 256
+    num_heads = 4
+    patch_size = 16
+    model = AudioVisionTransformer(
+        # video
+        img_size=160,
+        patch_size=patch_size, embed_dim=embed_dim, num_heads=num_heads, mlp_ratio=4, qkv_bias=True,
+        # audio
+        img_size_audio=(512, 128),  # (T, F)
+        patch_size_audio=patch_size, embed_dim_audio=embed_dim, num_heads_audio=num_heads,
+        # fusion
+        fusion_num_heads=num_heads,
+        norm_layer=partial(nn.LayerNorm, eps=1e-6), **kwargs)
+    model.default_cfg = _cfg()
+    return model
